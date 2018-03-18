@@ -27,20 +27,14 @@ Search = React.createClass({
             maxWidth: '350px'
         };
 
-        handleChange: function(event) {
-            var searchingText = event.target.value;
-            this.setState({
-                searchingText: searchingText
-            });
-        },
-
         return <input
-                 type="text"
-                 onChange={this.handleChange}
-                 placeholder="Tutaj wpisz wyszukiwaną frazę"
-                 style={styles}
-                 value={this.state.searchTerm}
-                />
+            type="text"
+            onChange={this.handleChange}
+            onKeyUp={this.handleKeyUp}
+            placeholder="Tutaj wpisz wyszukiwaną frazę"
+            style={styles}
+            value={this.state.searchTerm}
+        />
     }
 });
 
